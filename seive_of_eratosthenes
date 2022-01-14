@@ -1,1 +1,33 @@
+/* 1- declare an array 
+2- initilize it to 0
+3- now check for the the elements of arrays that are unmarked
+4- mark all the multiples of unmarked number form above
+5- print the the prime numbes */
 
+
+#include<iostream>
+using namespace std;
+void seive(int n){
+    int arr[100] = {0
+    };
+    for(int i = 2;i<=n;i++){
+        if(arr[i] == 0){
+            for(int j = i*i;j<=n;j+=i){
+                arr[j] = 1;
+            }
+        }
+    }
+    for(int i = 2;i<=n;i++){
+        if(arr[i] == 0){
+            cout<<i<<"  ";
+        }
+    }
+}
+int main()
+{
+    int n;
+    cin>>n;
+    seive(n);
+
+    return 0;
+}
